@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembrete de Remédios</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#e94560">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>💊 Lembrete de Remédios</h1>
+      <p class="subtitle">Nunca mais esqueça de tomar seu remédio</p>
+    </header>
+
+    <section id="notification-section">
+      <button id="btn-notificacoes" class="btn-primary" style="display:none;">
+        Ativar Notificações
+      </button>
+      <div id="notif-status" class="status-badge"></div>
+    </section>
+
+    <section id="form-section">
+      <h2>Cadastrar Remédio</h2>
+      <form id="form-remedio">
+        <div class="form-group">
+          <label for="nome-remedio">Nome do remédio</label>
+          <input type="text" id="nome-remedio" placeholder="Ex: Ibuprofeno" required>
+        </div>
+
+        <div class="form-group">
+          <label>Horários do dia</label>
+          <div id="horarios-list"></div>
+          <div class="add-horario-row">
+            <input type="time" id="input-horario" value="08:00">
+            <button type="button" id="btn-add-horario" class="btn-secondary">+ Adicionar</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Salvar Remédio</button>
+      </form>
+    </section>
+
+    <section id="lista-section">
+      <h2>Meus Remédios</h2>
+      <div id="lista-remedios">
+        <p class="empty-state">Nenhum remédio cadastrado ainda.</p>
+      </div>
+    </section>
+
+    <section id="status-section">
+      <h2>Status do Cron</h2>
+      <div id="cron-status">
+        <button id="btn-check-now" class="btn-secondary">Verificar agora</button>
+        <pre id="cron-result"></pre>
+      </div>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
