@@ -1,4 +1,4 @@
-const { kv } = require('@vercel/kv');
+const { kv } = require('./_kv');
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {

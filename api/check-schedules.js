@@ -1,5 +1,5 @@
 const webpush = require('web-push');
-const { kv } = require('@vercel/kv');
+const { kv } = require('./_kv');
 
 const vapidPublicKey = process.env.VAPID_PUBLIC_KEY;
 const vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
